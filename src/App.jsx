@@ -4,6 +4,8 @@
 // import Cybrom from "./Cybrom";
 // import Student from "./Student";
 
+//import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 ///=========================================variable=======================================================
 // const name="RNTU";
@@ -70,57 +72,81 @@
 //   )
 // })
 
-import Data from "./EmpData";
-import Design from "./Empdesign";
+// import Data from "./EmpData";
+// import Design from "./Empdesign";
 
-const ans=Data.map((key)=> <Design 
-  nm={key.name} 
-  emn={key.empolyno} 
-  desig={key.designation} 
-  sal={key.salary}/>
+// const ans=Data.map((key)=> <Design 
+//   nm={key.name} 
+//   emn={key.empolyno} 
+//   desig={key.designation} 
+//   sal={key.salary}/>
 
-)
+// )
 
 
-const FRS=()=>{
+// const FRS=()=>{
+ // return(
+   // <>
+   // <h1 align="center">welcome to react class!! this is my second class!!!</h1>
+   // {/* <Student nm="shivani" city="Indore" sub="Java"/>
+   
+   //  <College nm={name} st={seat} fs={fees}/> 
+
+   // <Cybrom nm={Clg.name} st={Clg.seat} fs={Clg.fees}/> */}
+   // {/* {ans}      */}
+
+   // {/* <select>{ans}</select> */}
+   // {/* <ul>{ans}</ul> */}
+
+   // {/* <hr />
+    // <table border="1" width="400px">
+    //   <tr>
+    //   <th>Name</th>
+    //   <th>Rollno</th>
+    //   <th>City</th>
+    //   <th>Fees</th>
+    //   </tr>
+    //   {ans}
+    // </table>
+    // */}
+//     <hr />
+//     <table border="1" width="400">
+//       <tr>
+//         <th>Name</th>
+//         <th>Employe</th>
+//         <th>Desgination</th>
+//         <th>Salary</th>
+//       </tr>
+//       {ans}
+//     </table>
+    
+//     </> 
+
+//   )
+// }
+
+//export default FRS;
+
+import {BrowserRouter,Routes, Route} from "react-router-dom";
+import Layout from "./pages/Layout";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+const App=()=>{
   return(
     <>
-    <h1 align="center">welcome to react class!! this is my second class!!!</h1>
-    {/* <Student nm="shivani" city="Indore" sub="Java"/>
-   
-     <College nm={name} st={seat} fs={fees}/> 
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout/>}>
+               <Route path="home" element={<Home/>}/>
+               <Route path="about" element={<About/>}/>
+               <Route path="contact" element={<Contact/>}/>
 
-    <Cybrom nm={Clg.name} st={Clg.seat} fs={Clg.fees}/> */}
-    {/* {ans}      */}
 
-    {/* <select>{ans}</select> */}
-    {/* <ul>{ans}</ul> */}
-
-    {/* <hr />
-    <table border="1" width="400px">
-      <tr>
-      <th>Name</th>
-      <th>Rollno</th>
-      <th>City</th>
-      <th>Fees</th>
-      </tr>
-      {ans}
-    </table>
-    */}
-    <hr />
-    <table border="1" width="400">
-      <tr>
-        <th>Name</th>
-        <th>Employe</th>
-        <th>Desgination</th>
-        <th>Salary</th>
-      </tr>
-      {ans}
-    </table>
-    
-    </> 
-
+            </Route>
+          </Routes>
+      </BrowserRouter>
+    </>
   )
 }
-
-export default FRS;
+export default App;
